@@ -1,0 +1,36 @@
+﻿@using Sosyopix_CaseStudy.Models.Entity;
+@model Photo
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1 style="text-align:center; margin-top:15%">@Model.Title</h1>
+
+<div class="container" style="margin-left:33%">
+
+    <div class="row">
+        <span style="font-weight:600">Tags: </span>
+            @{
+                string[] tags = @Model.Tag.Split(',',' ');
+                foreach (var item in tags)
+                {
+                    <span style="margin-left:15px; font-weight:600">#@item</span>
+                }
+            }
+    </div>
+    <br />
+    <div class="row">
+        <br />
+        <img src="@Model.URL" alt="" style="border-radius:7px; border:1px; solid #bbb9b9;
+             max-width:800px; max-height:300px;"/>
+    </div>
+    <br />
+    <div class="row">
+        <a asp-controller="Photo" asp-action="DeletePhoto" asp-route-id="@Model.ID" type="button" class="btn btn-danger" style="width:300px">Delete Photo</a>
+    </div>
+</div>
+
+
+
+
+

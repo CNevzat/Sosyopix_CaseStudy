@@ -1,0 +1,34 @@
+﻿@using Sosyopix_CaseStudy.Models.Entity;
+@model Photo
+@{
+    ViewData["Title"] = "Add";
+}
+
+<h1>Fotoğraf Ekle</h1>
+
+<form method="post" enctype="multipart/form-data">
+
+    <input asp-for="URL" hidden />
+    <div class="row">
+        <div class="col-10">
+            <div class="border p-3 mt-5">
+                <div class="mb-3">
+                    <label asp-for="Title" class="p-0"></label>
+                    <input asp-for="Title" class="form-control" placeholder="Enter Title" />
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Tag" class="p-0"></label>
+                    <input asp-for="Tag" class="form-control" placeholder="Enter Tag" />
+                </div>
+                <div class="mb-3">
+                    <label asp-for="URL" class="p-0">Photo</label>
+                    <input type="file" name="file" class="form-control" />
+                </div>
+            </div>
+            <br />
+            <button type="submit" class="btn btn-primary" style="width:200px">Add Photo</button>
+        </div>
+    </div>
+
+</form>
+

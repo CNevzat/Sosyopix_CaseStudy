@@ -1,0 +1,26 @@
+﻿@using Sosyopix_CaseStudy.Models.Entity;
+@model Photo
+@{
+    ViewData["Title"] = "Details";
+}
+
+<form method="post">
+    <div class="mb-3">
+        <label asp-for="Title" class=" p-0"></label>
+        <input asp-for="Title" disabled class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Tag" class=" p-0"></label>
+        <input asp-for="Tag" disabled class="form-control" />
+    </div>
+    <div class="mb-3" style="margin-left:35%">
+        <img src="@Model.URL" alt="" style="border-radius:7px; border:1px; solid #bbb9b9;
+             max-width:800px; max-height:300px;" />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-lg btn-danger" style="width:300px;margin-left:35%">Delete</button>
+</form>
+
+
+
+

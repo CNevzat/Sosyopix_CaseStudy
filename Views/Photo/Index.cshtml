@@ -1,0 +1,37 @@
+﻿@using Sosyopix_CaseStudy.Models.Entity;
+@model List<Photo>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 style="text-align:center">My Photos</h1>
+<br />
+<br />
+
+@if (Model.Count != 0) 
+{
+    <div class="container" style="margin-top:18%">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col">
+                    <a asp-controller="Photo" asp-action="Details" asp-route-id="@item.ID"><img src="@item.URL" style="width:150px; height:100px;"></a>
+                </div>         
+            }            
+        </div>
+        <br/>
+        <br>
+        <a asp-controller="Photo" asp-action="Add" type="button" class="btn btn-success">Add Photo</a>
+    </div>
+}
+else
+{
+    <h4>You don't have any photos yet :(</h4>
+
+    <a asp-controller="Photo" asp-action="Add" type="button" class="btn btn-success">Add Photo</a>
+}
+
+
+
+
+

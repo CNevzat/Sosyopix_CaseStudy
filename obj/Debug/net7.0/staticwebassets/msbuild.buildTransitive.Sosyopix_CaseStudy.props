@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Sosyopix_CaseStudy.props" />
+</Project>
